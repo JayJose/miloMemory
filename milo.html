@@ -6,23 +6,46 @@
     </head>
     
     <body>
-        <h1>milo memory</h1>
+        <h1>milo's memory challenge</h1>
+        <h6>you just don't know</h6>
         <script>
             $(document).ready(function() {
                 
-                var background = {
-                    height: 600,
-                    width: 1200,
-                    pad: 20
+                //create array of img tags + file names
+                var imgNumbers = [ 1,2,3,4,5,6,7 ],
+                    imgNames = imgNumbers.map(function(d) { 
+                        return [ $("<img src='milo" + d + ".png'>"),
+                                "<img src='check.png'>"];
+                    });
+                
+                //create placeholder img
+            
+                //add pictures to body
+                for(var i = 0; i < imgNumbers.length; i++) {                    
+                    imgNames[i][0].addClass("miloPic")
+                    .attr("id", "milo" + (i + 1)).appendTo("body");
                 };
                 
-                var svg = $("<svg>svg test</svg>")
+                $("img").on("click", function() {
                     
-                svg.appendTo("body").attr({
-                    height: background.height,
-                    width: background.width
+                    cond = $(this).attr("src");
+                    //is the img source a milo picture?
+                    if( cond.indexOf("milo") === 0 ) {
+                        $(this).attr("src", "check.png")
+                    }
+                    else {
+                        $(this).attr("src", "milo3.png")
+                    }
+                    
+                    //$(this).attr("src", "check.png")
+                    //$(this).slideToggle();
                 });
             
+                //on click, find the object id... if src = check, flip
+                //it to milo; else flip it to check
+                //document.getElementById("milo1").src returns image link
+                
+                
             
             });
         </script>
