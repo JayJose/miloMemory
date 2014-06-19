@@ -8,51 +8,6 @@
     <body>
         <h1>milo's memory challenge</h1>
         <h6>you just don't know</h6>
-        <script>
-            $(document).ready(function() {
-                
-                //create array of img tags + file names
-                var imgNumbers = [ 1,2,3,4,5,6,7 ],
-                    imgNames = imgNumbers.map(function(d) { 
-                        return $("<img src='milo" + d + ".png'>");
-                    });
-                
-                //create placeholder img
-            
-                //add pictures to body
-                for(var i = 0; i < imgNumbers.length; i++) {                    
-                    imgNames[i].addClass("miloPic")
-                    .attr("id", "milo" + (i + 1)).appendTo("body");
-                };
-                
-                $("img").on("click", function() {
-                    
-                    cond = $(this).attr("src");
-                    id = $(this).attr("id")
-                    alert(cond);
-                    alert(id);
-                    //is the img source a milo picture?
-                    if( cond.indexOf("milo") === 0 ) {
-                        $(this).attr("src", "check.png")
-                    }
-                    else {
-                        $(this).attr("src", 
-                                     imgNames[imgNames.indexOf(id + ".png")]);
-                        alert(imgNames[imgNames.indexOf(id + ".png")]);
-                    }
-                    
-                    //$(this).attr("src", "check.png")
-                    //$(this).slideToggle();
-                });
-            
-                //on click, find the object id... if src = check, flip
-                //it to milo; else flip it to check
-                //document.getElementById("milo1").src returns image link
-                
-                
-            
-            });
-            
-        </script>
+        <script src="milo.js"></script>
     </body>
 </html>
