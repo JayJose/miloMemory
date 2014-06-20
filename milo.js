@@ -1,38 +1,41 @@
 $(document).ready(function() {
 
-//create array of img tags + file names
-var imgNumbers = [ 1,2,3,4,5,6,7 ],
-    imgNames = imgNumbers.map(function(d) { 
-        return $("<img src='milo" + d + ".png'>");
-    });
-
-
-//add pictures to body
-for(var i = 0; i < imgNumbers.length; i++) {                    
-    imgNames[i].addClass("miloPic").attr("id", "milo" + (i + 1)).appendTo("body");
-};
-
-$("img").on("click", function() {
-
-var src = $(this).attr("src");
-var id = $(this).attr("id")
-
-//is the img source a milo picture?
-if( src.indexOf("milo") === 0 ) {
-    $(this).attr("src", "check.png");
-}
-    else {
-        $(this).attr("src", id + ".png");
+    //create array of img tags + file names
+    var numberSquares = 16,
+        imgNumbers = [];
+    
+    for(var i = 0; i < numberSquares / 2; i++) {
+        imgNumbers[i] = i + 1;
     }
+    // double the array
+    imgNumbers = imgNumbers.concat(imgNumbers)
+    
+    // assign file names
+    imgNames = imgNumbers.map(function(d) {
+            return $("<img src='milo" + d + ".png'>");
+    });
+    
+    // add pictures to body
+    imgNumbers.forEach(function(d, i) {
+            $("<img>").attr({
+                id: "milo" + d,
+                src: "pinkBack.png"
+            }).appendTo("body");
 
-//$(this).attr("src", "check.png")
-//$(this).slideToggle();
-});
+    });
+    
+    // click event handler
+    $("img").on("click", function() {
 
-//on click, find the object id... if src = check, flip
-//it to milo; else flip it to check
-//document.getElementById("milo1").src returns image link
+        var src = $(this).attr("src");
+        var id = $(this).attr("id")
 
-
+        //is the img source a milo picture?
+        if( src.indexOf("milo") === 0 ) {
+            $(this).attr("src", "pinkBack.png");
+        }
+        else {
+            $(this).attr("src", id + ".png");
+        }
 
 });

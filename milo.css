@@ -1,6 +1,6 @@
 /* ELEMENTS */
 body {
-    font-family: tahoma;
+    font-family: helvetica;
 }
 
 h1 {
@@ -23,5 +23,8 @@ img {
 }
 
 /* CLASSES */
+.right {
+    
+}
 
 /* IDs */
