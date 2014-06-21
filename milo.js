@@ -20,22 +20,34 @@ $(document).ready(function() {
             $("<img>").attr({
                 id: "milo" + d,
                 src: "pinkBack.png"
-            }).appendTo("body");
+            }).addClass("notRight")
+            .appendTo("body");
 
     });
     
     // click event handler
     $("img").on("click", function() {
 
-        var src = $(this).attr("src");
-        var id = $(this).attr("id")
+        var src = $(this).attr("src"),
+            id = $(this).attr("id"),
+            fadeTime = 250;
 
         //is the img source a milo picture?
+        //yes
         if( src.indexOf("milo") === 0 ) {
-            $(this).attr("src", "pinkBack.png");
+            $(this).fadeOut(fadeTime, function() {
+                $(this).attr("src", "pinkBack.png")
+                .fadeIn(fadeTime);
+            });
         }
+        //no
         else {
-            $(this).attr("src", id + ".png");
+            $(this).fadeOut(fadeTime, function() {
+                $(this).attr("src", id + ".png")
+                .fadeIn(fadeTime);
+            })
         }
+
+    });
 
 });

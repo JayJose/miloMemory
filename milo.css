@@ -15,7 +15,7 @@ h6 {
 }
 
 img {
-    border: 1px solid black;
+    border-radius: 7px;
     height: 100px;
     margin: 1px 2px 1px 2px;
     width: 100px;
