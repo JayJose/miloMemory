@@ -17,14 +17,27 @@ h6 {
 img {
     border-radius: 7px;
     height: 100px;
-    margin: 1px 2px 1px 2px;
+    margin: 2px 3px 2px 3px;
     width: 100px;
     
 }
 
 /* CLASSES */
+.highlight {
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(139, 124, 139, 0.75));
+}
+
 .right {
-    
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
 }
 
 /* IDs */
+
+#scoreKeeper {
+    display: inline;
+}
+
+#scoreValue {
+    display: inline;
+}
