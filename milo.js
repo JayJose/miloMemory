@@ -88,11 +88,12 @@
             }
             
             else {
+                setTimeout(function() {
                 $(first).removeClass("clicked").attr("src" ,"pinkBack.png");
                 $(second).removeClass("clicked").attr("src" ,"pinkBack.png");
+                }, 300)
             }
         }
-        
-    })
+    });
 
     
